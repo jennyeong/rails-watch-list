@@ -1,6 +1,13 @@
 class MoviesController < ApplicationController
 
   def list
-    @lists = List.all
+    @lists = Movie.all
+  end
+
+  def new
+    @list = List.new
+  end
+
+  def create
   end
 end

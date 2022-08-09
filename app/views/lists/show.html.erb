@@ -1,3 +1,13 @@
 <h1><%= @list.name %></h1>
 
 <p>Movies with <%= @list.name %></p>
+<% @bookmark.each do |movie| %>
+  <div class="card w-50">
+    <%= image_tag(movie.movie.poster_url) %>
+    <p><b><%= movie.movie.title %> - <%= movie.movie.rating %>/5</b></p>
+    <p><%= movie.movie.overview %></p>
+    <p>"<%= movie.comment %>"</p>
+    <%= link_to "Delete", bookmark_path(movie),
+     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  </div>
+<% end %>

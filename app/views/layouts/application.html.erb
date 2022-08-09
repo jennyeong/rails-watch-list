@@ -11,6 +11,15 @@
   </head>
 
   <body>
+    <div class="navbar">
+      <div class="logo">
+        <%= image_tag("popcorn.png", width: "50") %>
+      </div>
+      <div class="helpers">
+        <%= link_to 'My lists', lists_path %>
+        <%= link_to 'New list', new_list_bookmark_path(List.last.id) %>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>
